@@ -1,0 +1,17 @@
+// styles added for the common nav element
+nav {
+    background: hsl(0, 0%, 100%);
+    padding: 20px 30px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+    a {
+        display: block;
+        width: 150px;
+        height: auto;
+    }
+
+    img {
+        width: 100%;
+        vertical-align: middle;
+    }
+}

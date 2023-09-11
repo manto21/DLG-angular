@@ -1,0 +1,79 @@
+// styles added for the Homepage
+.sign-up-page {
+    padding: 30px;
+
+    h3 {
+        margin: 10px 0;
+        text-align: center;
+    }
+    
+    .form-group.submit {
+        text-align: center;
+
+        .submit-button {
+            height: auto;
+            min-height: 40px;
+            border-radius: 20px;
+            background-color: #000;
+            border: 1px solid #000;
+            color: #fff;
+            margin: 20px 0 0;
+            cursor: pointer;
+            padding: 0 40px;
+            transition: transform 0.5s;
+
+            &:hover {
+                box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
+                transform: scale3d(1.1, 1.1, 1.1);
+            }
+        }
+    }
+
+    .sign-up-wrapper {
+        border-top: 1px solid rgba(0,0,0,.1);
+        padding-top: 20px;
+        max-width: 266px;
+        margin: 0 auto;
+
+        .form-group {
+            margin-bottom: 20px;
+
+            &.submit .success-text {
+                display: none;
+                font-weight: 600;
+                color: #44bc22;
+                padding-top: 10px;
+
+                &.successful {
+                    display: block;
+                }
+            }
+        }
+
+        .form.ng-submitted {
+            input.ng-invalid {
+                border-color: #FF0000;
+            }
+
+            input.ng-invalid ~ p {
+                display: block;
+            }
+        }
+
+        input {
+            box-sizing: border-box;
+            height: 40px;
+            width: 100%;
+            font-size: 16px;
+            line-height: 24px;
+            border: 1px solid #dedede;
+            border-radius: 0.5rem;
+            padding: 0 0.5rem;
+            margin: 5px 0 0;
+        }
+
+        .error {
+            color: #FF0000;
+        }
+    }
+}

@@ -13,22 +13,26 @@ export class SignUpComponent implements OnInit {
   validEmailPattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
   userData: any;
   signUpSuccess: boolean = false;
+  enableSubmitBtn: boolean = false;
   // use this variable to add dynamic fields
   formFields = [
     {
       id: 'firstname',
       label: 'First name',
-      value: ""
+      value: "",
+      errorMessage: "Please enter your first name"
     },
     {
       id: 'lastname',
       label: 'Last name',
-      value: ""
+      value: "",
+      errorMessage: "Please enter your last name"
     },
     {
       id: 'email',
       label: 'Email address',
-      value: ""
+      value: "",
+      errorMessage: "Please enter your email address"
     }
   ]
 
@@ -39,6 +43,9 @@ export class SignUpComponent implements OnInit {
   }
 
   buildForm() {
+    this.signUpForm.valueChanges.forEach(() => {
+      this.signUpForm.valid ? this.enableSubmitBtn = true : this.enableSubmitBtn = false;
+    });
     this.formFields.forEach(item => {
       item.id == "email" ? this.signUpForm.addControl(item.id, new FormControl(item.value, [Validators.required, Validators.pattern(this.validEmailPattern)]))
         : this.signUpForm.addControl(item.id, new FormControl(item.value, Validators.required));
@@ -59,5 +66,9 @@ export class SignUpComponent implements OnInit {
         }
       })
     }
+  }
+
+  closeBanner() {
+    this.signUpSuccess = false;
   }
 }

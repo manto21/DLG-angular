@@ -1,17 +1,20 @@
 // styles added for the Homepage
 .sign-up-page {
+    background: #dadada;
     padding: 30px;
+    min-height: calc(100vh - 153px);
 
     h3 {
         margin: 10px 0;
         text-align: center;
     }
-    
+
     .form-group.submit {
         text-align: center;
 
         .submit-button {
             height: auto;
+            font-size: 16px;
             min-height: 40px;
             border-radius: 20px;
             background-color: #000;
@@ -21,6 +24,13 @@
             cursor: pointer;
             padding: 0 40px;
             transition: transform 0.5s;
+            pointer-events: none;
+            opacity: 0.5;
+
+            &.enabled {
+                pointer-events: visible;
+                opacity: 1;
+            }
 
             &:hover {
                 box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
@@ -29,34 +39,66 @@
         }
     }
 
+    .sign-up-content {
+        background: #FFF;
+        box-shadow: 0 4px 9px 0 rgba(0,0,0,.12);
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+
+        div#bannerMsgId {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .success-text{
+            display: none;
+            border-radius: 10px;
+            font-weight: 600;
+            overflow: hidden;
+            color: #FFF;
+            margin-top: 1px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 5px #d3d3d3;
+            min-height: 24px;
+            padding: 10px;
+            text-align: center;
+            background-color: #04d704;
+
+            &.successful {
+                display: block;
+            }
+
+            span.clear-icon {
+                font-size: 24px;
+                position: absolute;
+                right: 6px;
+                color: #000;
+                top: calc(100% - 50px);
+                cursor: pointer;
+            }
+        }
+    }
+
     .sign-up-wrapper {
-        border-top: 1px solid rgba(0,0,0,.1);
+        border-top: 1px solid rgba(0, 0, 0, .1);
         padding-top: 20px;
-        max-width: 266px;
+        max-width: 500px;
         margin: 0 auto;
 
         .form-group {
             margin-bottom: 20px;
-
-            &.submit .success-text {
-                display: none;
-                font-weight: 600;
-                color: #44bc22;
-                padding-top: 10px;
-
-                &.successful {
-                    display: block;
-                }
-            }
         }
 
         .form.ng-submitted {
-            input.ng-invalid {
-                border-color: #FF0000;
+            input.ng-invalid~p {
+                display: block;
             }
 
-            input.ng-invalid ~ p {
-                display: block;
+            input.ng-touched.ng-invalid {
+                border-color: #FF0000;
             }
         }
 
@@ -70,6 +112,25 @@
             border-radius: 0.5rem;
             padding: 0 0.5rem;
             margin: 5px 0 0;
+        }
+
+        .form-group.t-c {
+            display: flex;
+        }
+
+        input[type="checkbox"] {
+            height: 15px;
+            width: 15px;
+            cursor: pointer;
+            margin: 5px 10px 0 0;
+        }
+
+        span.terms-text {
+            margin-top: 2px;
+        }
+
+        .login-text {
+            margin-top: 10px;
         }
 
         .error {
